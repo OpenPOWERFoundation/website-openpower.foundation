@@ -13,7 +13,11 @@ draft: true
 
 This blog post presents coreboot ([spelled in lower case characters](https://doc.coreboot.org/#spelling-of-coreboot),
 even when it is the first word in a sentence) and Heads as an alternative to
-Hostboot and Skiroot/Petitboot, respectively.
+Hostboot and Skiroot/Petitboot, respectively. The project was extensive, a list
+of changes (incomplete!) can be found in [this issue](https://github.com/linuxboot/heads/issues/1729).
+The work was paid through [Open Collective funds](https://opencollective.com/3mdeb_com)
+and Insurgo personal investments, as well as 3mdeb investment and [NGI0 PET fund](https://nlnet.nl/project/AccessibleSecurity/).
+It took 3 years so far, with results available as part of [Dasharo firmware distribution](https://www.dasharo.com/).
 
 As described on the [project's page](https://coreboot.org),
 
