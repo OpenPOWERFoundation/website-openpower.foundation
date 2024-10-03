@@ -84,15 +84,13 @@ operatingsystems:
     - Alma Linux 8
     - Alma Linux 9
     - Alpine
-    - CentOS Stream 8 (GPU)
     - CentOS Stream 9 (GPU)
-    - Debian 10
     - Debian 11
     - Debian 12
     - Fedora [latest]
-    - Ubuntu 18.04
     - Ubuntu 20.04 (GPU)
     - Ubuntu 22.04 (GPU)
+    - Ubuntu 24.04 (GPU)
   unavailable:
 weight: -9000
 date: 2022-08-24
