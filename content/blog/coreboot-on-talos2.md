@@ -1,14 +1,14 @@
 ---
 title: coreboot and Heads as an alternative firmware for OpenPOWER Talos II
-author: Krystian Hebel
+author: Krystian Hebel (3mdeb)
 tags:
   - openpower
   - power9
   - firmware
   - coreboot
   - hostboot
-date: 2024-07-09
-draft: true
+date: 2024-10-08
+draft: false
 ---
 
 This blog post presents coreboot ([spelled in lower case characters](https://doc.coreboot.org/#spelling-of-coreboot),
@@ -24,7 +24,7 @@ As described on the [project's page](https://coreboot.org),
 > coreboot is an extended firmware platform that delivers a lightning fast and
 > secure boot experience on modern computers and embedded systems.
 
-{{< image src="blog/coreboot.svg" >}}
+{{< image src="blog/coreboot.png" width="900" height="900" >}}
 
 It aims to do the bare minimum required to make the hardware usable and pass
 the control to next program, called the payload. In case of Talos II, that
@@ -309,3 +309,7 @@ Here are some links to documentation related to this project:
 
 We invite you to test for yourselves and share the results, both good and bad,
 either on channels listed above or in issue.
+
+The OpenPOWER Talos II running coreboot and heads was presented on Open Source
+Firmware Conference 2024 in Bochum, Germany. Video from the presentaion is
+availabel at [Vimeo](https://vimeo.com/1007701325).
