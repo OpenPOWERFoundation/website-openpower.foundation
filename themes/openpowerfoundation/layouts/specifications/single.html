@@ -38,13 +38,16 @@
 	<div class="col-lg-3"></div>
 	<div class="col-lg-6 content">
 		<div><p>{{ .Content }}</p></div>
-		{{ if .Param "feedback"}}
-			{{ range $feedback := (.Param "feedback") }}
-				<a href="{{ $feedback.url }}"><div class="feedback btn btn-outline-primary">
-					<h3>{{ $feedback.title }}</h3>
-					{{ $feedback.description | markdownify }}
+		{{ if .Param "feedbackprocess"}}
+			{{ range $feedbackprocess := (.Param "feedbackprocess") }}
+				<a href="{{ $feedbackprocess.url }}"><div class="feedback btn btn-outline-primary">
+					<h3>{{ $feedbackprocess.title }}</h3>
+					{{ $feedbackprocess.description | markdownify }}
 				</div></a><br><br>
 			{{ end }}
+		{{ end }}
+		{{ if .Param "feedback" }}
+			{{ partial "feedbackform.html" . }}
 		{{ end }}
 	</div>
 	<div class="col-lg-3">
