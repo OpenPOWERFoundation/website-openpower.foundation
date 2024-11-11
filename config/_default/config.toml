@@ -22,6 +22,14 @@ enableEmoji = true
 	noJSConfigInAssets = false
 #	useResourceCacheWhen = 'always'
 	writeStats = true
+	[build.buildStats]
+		enable = true
+		disableClasses = false
+		disableIDs = false
+		disableTags = false
+	[[build.cacheBusters]]
+		source = '(postcss|tailwind)\.config\.js'
+		target = '(css|styles|scss|sass)'
 
 [outputs]
 	home = [ "HTML" , "RSS" ]
@@ -141,20 +149,20 @@ enableEmoji = true
 [caches]
 [caches.assets]
 	dir = ':resourceDir/_gen'
-	maxAge = "5m"
+	maxAge = -1
 [caches.getcsv]
 	dir = ':cacheDir/:project'
-	maxAge = "5m"
+	maxAge = -1
 [caches.getjson]
-	 dir = ':cacheDir/:project'
-	maxAge = "5m"
+	dir = ':cacheDir/:project'
+	maxAge = -1
 	ttl = 300
 [caches.getresource]
 	dir = ':cacheDir/:project'
-	maxAge = "5m"
+	maxAge = -1
 [caches.images]
 	dir = ':resourceDir/_gen'
-	maxAge ="5m"
+	maxAge = -1
 [caches.modules]
 	dir = ':cacheDir/modules'
-	maxAge = "5m"
+	maxAge = -1
