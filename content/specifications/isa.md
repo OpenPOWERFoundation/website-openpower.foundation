@@ -2,7 +2,7 @@
 title: "Instruction Set Architecture"
 group: isa
 publicreview: false
-feedback:
+feedbackprocess:
   - title: Request For Change Feedback for "non ISA TWG members"
     description: "This feedback process uses the RFC method, which we divide in 3 types : _minor changes_, _formal proposal_, or _RFC_."
     url: /isarfc/

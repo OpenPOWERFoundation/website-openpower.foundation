@@ -1,6 +1,8 @@
 #!Makefile
 
 HUGO=hugo-extended
+HUGO_NUMWORKERMULTIPLIER=64
+HUGO_MEMORYLIMIT=32
 BUILDNAME:=$(shell git rev-parse --abbrev-ref HEAD)
 BASEURL:=$(shell basename `pwd` | sed 's/_/./g')
 BRANCHES:=$(shell git branch -r | sed 's/origin\///g' | sed 's/pr\//pr-/' | sed '/HEAD/d' | sed '/master/d' | sed '/main/d')
@@ -28,7 +30,7 @@ build-staging:
 
 .PHONY: test
 test: clean
-	$(HUGO) --environment=development --minify --templateMetrics --templateMetricsHints --memstats hug_mem_log
+	HUGO_NUMWORKERMULTIPLIER=$(HUGO_NUMWORKERMULTIPLIER) HUGO_MEMORYLIMIT=$(HUGO_MEMORYLIMIT) $(HUGO) --environment=development --minify --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --templateMetricsHints
 
 .PHONY: draft
 draft:
