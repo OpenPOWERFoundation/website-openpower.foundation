@@ -6,5 +6,6 @@ link: https://www.redsemiconductor.com
 level: silver
 joined: 2022
 date: 2022-07-28
+cancelled: 2025-01-03
 draft: false
 ---
