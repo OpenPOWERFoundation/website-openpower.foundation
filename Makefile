@@ -12,7 +12,7 @@ default all: build
 
 .PHONY: build
 build:
-	$(HUGO) --environment=production --minify --templateMetrics
+	HUGO_NUMWORKERMULTIPLIER=$(HUGO_NUMWORKERMULTIPLIER) HUGO_MEMORYLIMIT=$(HUGO_MEMORYLIMIT) $(HUGO) --environment=production --minify --templateMetrics --logLevel info
 	@find public/ -name '*.html' ! -name '*.gz' -type f -exec sh -c "gzip -c -9 < {} > {}.gz" \;
 	@find public/ -name '*.css' ! -name '*.gz' -type f -exec sh -c "gzip -c -9 < {} > {}.gz" \;
 	@find public/ -name '*.js' ! -name '*.gz' -type f -exec sh -c "gzip -c -9 < {} > {}.gz" \;
@@ -30,7 +30,7 @@ build-staging:
 
 .PHONY: test
 test: clean
-	HUGO_NUMWORKERMULTIPLIER=$(HUGO_NUMWORKERMULTIPLIER) HUGO_MEMORYLIMIT=$(HUGO_MEMORYLIMIT) $(HUGO) --environment=development --minify --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --templateMetricsHints
+	HUGO_NUMWORKERMULTIPLIER=$(HUGO_NUMWORKERMULTIPLIER) HUGO_MEMORYLIMIT=$(HUGO_MEMORYLIMIT) $(HUGO) --environment=development --minify --printMemoryUsage --printPathWarnings --printUnusedTemplates --templateMetrics --templateMetricsHints --logLevel debug
 
 .PHONY: draft
 draft:
