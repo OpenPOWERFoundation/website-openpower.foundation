@@ -6,7 +6,7 @@ draft: false
 ---
 
 The OpenPOWER Foundation Board of Directors is chartered to set the tactical and strategic direction of the organization.
-In this capacity the Board has ratified the Foundations Mission Statement and 2022 Focus Areas as follows:
+In this capacity the Board has ratified the Foundations Mission Statement and 2025 Focus Areas as follows:
 
 _"Through the growing open ecosystem of the POWER Architecture and its associated technologies,
 the OpenPOWER Foundation facilitates its Members to share expertise, investment and intellectual property to serve the evolving needs of all end users."_
@@ -14,7 +14,7 @@ the OpenPOWER Foundation facilitates its Members to share expertise, investment 
 Focus Areas :
 
 Recognizing that truly valuable solutions come from both strong open technologies and a community that supports same,
-the OpenPOWER Foundation (OPF) will focus in 2022 on these key areas :
+the OpenPOWER Foundation (OPF) will focus in 2025 on these key areas :
 
 - Building and engaging our Developer communities across multiple areas including Open Source Software, Academia, Cloud, HPC, ISVs and AI.
   - Increasing geographical and informal collaborations/events for member-to-member communication.
