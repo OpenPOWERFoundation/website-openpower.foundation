@@ -1,9 +1,11 @@
 ---
-title: Ganesan Narayanasamy
+title: "Ganesan Narayanasamy"
+image: "ganesannarayanasamy.jpeg"
 member: objectautomationsoftwaresolutions
-date: 2023-12-04
+date: 2025-03-14
 draft: false
 ---
+
 Ganesan Narayanasamy is a technology leader with extensive experience in
 technology and business. He is the founder, investor, and Chief Executive
 Officer  at Object Automation System Solutions Inc. Prior to his current
