@@ -13,6 +13,7 @@ addons:
   - OpenCAPI Alpha Data 9H3 FPGA
 systems:
   - POWER9
+  - POWER10 (VM Only)
 sponsors:
   - mellanox
   - oracle
