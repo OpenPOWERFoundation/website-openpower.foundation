@@ -1,7 +1,7 @@
 ---
 title: "Timothy Pearson"
 image: "timothypearson-200.jpg"
-member: solidsilicon
+member: raptorcomputingsystems
 date: 2024-06-14
 draft: false
 ---
