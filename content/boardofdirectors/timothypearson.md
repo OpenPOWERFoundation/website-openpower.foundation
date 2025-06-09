@@ -1,6 +1,6 @@
 ---
 title: "Timothy Pearson"
-position: "Chairman"
+position: "Director"
 weight: 1
 date: 2024-06-27
 start: 2024-06-14
