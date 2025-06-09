@@ -11,7 +11,7 @@ tags:
   - open-source-hardware
   - member
 date: 2024-06-13
-draft: false
+draft: true
 ---
 
 Today, we are pleased to announce that Solid Silicon, a fabless semiconductor company based in Colorado, US, has joined the OpenPOWER Foundation as a Platinum member.  
