@@ -5,6 +5,7 @@ country: USA
 link: https://solidsilicon.com
 level: platinum
 joined: 2024
+cancelled: 2024-08-31
 date: 2024-05-18
 draft: false
 ---
