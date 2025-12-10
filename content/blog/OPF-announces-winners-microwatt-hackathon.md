@@ -32,6 +32,6 @@ Designs were chosen by a panel of industry experts, using criteria such as desig
 
 "The Microwatt Design Challenge submissions are a testament to the comprehensive, high-performance open-source tools now at the community's fingertips for the OpenPOWER ISA and Microwatt Core," said [James Kulina](https://www.linkedin.com/in/james-kulina/), Executive Director, OpenPOWER Foundation. "In collaboration with ChipFoundry, we've created an open design flow that will allow our community to innovate at high velocity and deliver novel and impactful open designs. We are absolutely thrilled to welcome these three winning designs into the OpenPOWER ecosystem."
 
-For more detail on the event and the winning designs, please visit the [Microwatt Hackathon webpage](chipfoundry.io/challenges/microwatt).
+For more detail on the event and the winning designs, please visit the [Microwatt Hackathon webpage](https://chipfoundry.io/challenges/microwatt).
 
 
