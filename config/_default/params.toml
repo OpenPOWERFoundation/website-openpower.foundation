@@ -1,2 +1,6 @@
 #[toparea]
 #	text = "Regional Conference - 4th June 2020 - Intelligent Platforms"
+
+[author]
+	name = "OpenPOWER Foundation"
+	email = "noreply@openpower.foundation"

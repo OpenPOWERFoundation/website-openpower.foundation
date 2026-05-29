@@ -150,13 +150,6 @@ enableEmoji = true
 [caches.assets]
 	dir = ':resourceDir/_gen'
 	maxAge = -1
-[caches.getcsv]
-	dir = ':cacheDir/:project'
-	maxAge = -1
-[caches.getjson]
-	dir = ':cacheDir/:project'
-	maxAge = -1
-	ttl = 300
 [caches.getresource]
 	dir = ':cacheDir/:project'
 	maxAge = -1
