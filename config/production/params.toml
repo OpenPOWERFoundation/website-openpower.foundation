@@ -1,7 +1,8 @@
 #!parms.toml
-[analytics.piwik]
-	URI = "stats.vantosh.com"
-	ID = "69"
+# Analytics temporarily disabled while migrating away from vantosh.com hosting.
+# [analytics.piwik]
+# 	URI = "stats.vantosh.com"
+# 	ID = "69"
 [forms.contact]
 	URI = "https://webscripts.vantosh.com/forms/contactus/opf"
 [forms.hub]

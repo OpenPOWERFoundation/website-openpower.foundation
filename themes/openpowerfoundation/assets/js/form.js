@@ -76,6 +76,12 @@ jQuery(document).ready(function($) {
 		});
 		if (ferror) {
 			return false;
+		} else if (typeof submiturl === 'undefined' || submiturl === '' || submiturl.indexOf('vantosh.com') !== -1) {
+			// TEMPORARY: form submissions to vantosh.com are disabled.
+			// Remove this branch to re-enable submissions.
+			$("#sendmessage").removeClass("show").hide();
+			$("#errormessage").html("Form submissions are temporarily offline while we migrate to a new hosting provider. Please check back soon.").addClass("show").show();
+			return false;
 		} else {
 			var str = $(this).serialize();
 			$.ajax({

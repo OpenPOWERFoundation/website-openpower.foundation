@@ -72,11 +72,11 @@ We collect several types of information from and about our Members, Website user
 	- Publically available details, such as contact details on your personal website or Social Media Platforms.
 	- Information that you or another representative provides in connection with a Membership application, Membership agreement,
 	  or Membership profile or status, which shall include your contact information and marketing preferences.
-	- Any relevant personal data that you may have submitted to our affiliate partners (including Linux Foundation, VanTosh) (_Affiliate Partners_)
+	- Any relevant personal data that you may have submitted to our affiliate partners (including Linux Foundation, Oregon State University Open Source Lab) (_Affiliate Partners_)
 	  or other service providers in the course of them providing the Services on our behalf.
 
 You may also provide information to be published or displayed (hereinafter, "posted") on areas of the Website,
-our affiliate websites (including Linux Foundation, VanTosh and other partner Platforms) (_Affiliate Partners_) and
+our affiliate websites (including Linux Foundation, Oregon State University Open Source Lab and other partner Platforms) (_Affiliate Partners_) and
 Social Media Platforms that are visible to other Website users, Members, or other participants in Working Groups that you participate in
 (collectively, _User Contributions_).
 Your User Contributions are posted on and transmitted to others at your own risk.
