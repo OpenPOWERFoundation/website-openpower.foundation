@@ -1,6 +1,6 @@
 ### config.toml
 title = "OpenPOWER Foundation"
-baseURL = "https://openpower.foundation/"
+baseURL = "https://openpowerfoundation.org/"
 theme = "openpowerfoundation"
 #languageCode = "opf"
 #defaultContentLanguage = "opf"
