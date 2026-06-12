@@ -1,0 +1,17 @@
+{{- /*
+  Shared formsender fields for every form on the site.
+  Emits the hidden fields formsender requires (honeypot, token, redirect) plus
+  the reCAPTCHA widget. Include once inside each <form> element:
+      {{ partial "formsender-fields.html" . }}
+  The form's `action` should be set to {{ .Site.Params.forms.endpoint }} and it
+  should submit via a normal POST (formsender 302-redirects to forms.redirect).
+*/ -}}
+<input type="hidden" name="last_name" value="" />
+<input type="hidden" name="token" value="{{ .Site.Params.forms.token }}" />
+<input type="hidden" name="redirect" value="{{ .Site.Params.forms.redirect }}" />
+<div class="form-row">
+	<div class="form-group col-lg-12 d-flex justify-content-center">
+		<div class="g-recaptcha" data-sitekey="{{ .Site.Params.forms.recaptcha_sitekey }}"></div>
+	</div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

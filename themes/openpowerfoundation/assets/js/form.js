@@ -76,33 +76,16 @@ jQuery(document).ready(function($) {
 		});
 		if (ferror) {
 			return false;
-		} else if (typeof submiturl === 'undefined' || submiturl === '' || submiturl.indexOf('vantosh.com') !== -1) {
-			// TEMPORARY: form submissions to vantosh.com are disabled.
-			// Remove this branch to re-enable submissions.
+		}
+		// Require the reCAPTCHA challenge to be completed before submitting.
+		if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse() === '') {
 			$("#sendmessage").removeClass("show").hide();
-			$("#errormessage").html("Form submissions are temporarily offline while we migrate to a new hosting provider. Please check back soon.").addClass("show").show();
-			return false;
-		} else {
-			var str = $(this).serialize();
-			$.ajax({
-				type: "POST",
-				data: str,
-				url: submiturl,
-				complete: function() {
-					$("#sendmessage").addClass("show");
-					$("#errormessage").removeClass("show");
-					$(formname)[0].reset();
-					$('input[type="text"],textarea').val('');
-					if(typeof goal !== 'undefined') {
-						_paq.push(['trackGoal', goal]);
-					}
-					$('#sendmessage').show();
-					setTimeout(function() {
-						$('#sendmessage').fadeOut();
-					}, 2500);
-				}
-			});
+			$("#errormessage").html("Please complete the reCAPTCHA challenge before submitting.").addClass("show").show();
 			return false;
 		}
+		// Valid: allow the normal POST to formsender. formsender validates the
+		// submission server-side and 302-redirects to forms.redirect on success,
+		// or back to that page with ?error=&message= on failure.
+		return true;
 	});
 });

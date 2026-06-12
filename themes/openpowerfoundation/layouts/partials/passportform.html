@@ -1,14 +1,14 @@
 <script>
 var formname = "form.passportForm";
-var submiturl = "{{ .Site.Params.forms.passport.URI }}";
-{{ if .Site.Params.forms.passport.goal }}
-var goal = "{{ .Site.Params.forms.passport.goal }}";
-{{ end }}
 </script>
 <section id="passport">
 <div class="container"><div class="row wow fadeInUp">
 	<div class="col-lg-8 offset-lg-2 col-md-12"><div class="form">
-	<form role="form" name="passportForm" class="passportForm" id="passportForm" action="" method="post">
+	<form role="form" name="passportForm" class="passportForm" id="passportForm" action="{{ .Site.Params.forms.endpoint }}" method="post" accept-charset="UTF-8">
+		<input type="hidden" name="send_to" value="{{ .Site.Params.forms.passport.queue }}" />
+		<input type="hidden" name="mail_subject_prefix" value="Passport Request" />
+		<input type="hidden" name="mail_subject_key" value="uid" />
+		<input type="hidden" name="custom_fields" value="UID:uid,FirstName:firstname,LastName:lastname,DisplayName:displayname,Member:member,WorkingGroups:workgroups" />
 		<div class="form-row">
 			<div class="form-group col-lg-12">
 				<input type="text" name="uid" class="form-control" id="uid" placeholder="Your Unique OPF Passport User ID" data-rule="minlen:2" data-msg="Please enter at least 2 characters" />
@@ -50,12 +50,12 @@ var goal = "{{ .Site.Params.forms.passport.goal }}";
 		<div class="form-row">
 			{{ range where .Site.RegularPages "Section" "groups" }}
 				<div class="form-group col-lg-6">
-					<input type="checkbox" class="mr-2" id="workgroups" name="workgroups" value="{{ .Title }}" onChange="updateWorkingGroups()">
+					<input type="checkbox" class="mr-2" id="workgroups" name="workgroups" value="{{ .Title }}">
 					{{ .Title }} (<i>{{ .Param "Participation" }}</i>)<br>
 				</div>
 			{{ end }}
-			<input type=hidden id="workinggroups" name="workinggroups" value="">
 		</div>
+		{{ partial "formsender-fields.html" . }}
 		<div class="form-row">
 			<div class="form-group col-lg-12 text-center">
 				<div id="sendmessage">Your request has been sent. Thank you!</div>
@@ -67,12 +67,3 @@ var goal = "{{ .Site.Params.forms.passport.goal }}";
 	</div></div>
 </div>
 </section>
-<script>
-function updateWorkingGroups() {
-	var workinggroups = [];
-	$('input[id="workgroups"]:checked').each(function() {
-		workinggroups.push(this.value);
-	});
-	document.getElementById("workinggroups").value = workinggroups;
-};
-</script>

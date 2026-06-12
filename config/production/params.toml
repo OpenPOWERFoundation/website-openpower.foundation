@@ -3,13 +3,17 @@
 # [analytics.piwik]
 # 	URI = "stats.vantosh.com"
 # 	ID = "69"
-[forms.contact]
-	URI = "https://webscripts.vantosh.com/forms/contactus/opf"
-[forms.hub]
-	URI = "https://webscripts.vantosh.com/forms/hub/opf"
-[forms.isarfc]
-	URI = "https://webscripts.vantosh.com/forms/isarfc/opf"
-[forms.passport]
-	URI = "https://webscripts.vantosh.com/forms/passport/opf"
+
+# Form submissions are handled by formsender (https://github.com/osuosl/formsender),
+# which creates RT tickets. One formsender instance serves this site, pointed at
+# the OpenPOWER Foundation RT via its RT_URL. The token below must match that
+# instance's TOKEN env var, and the reCAPTCHA site key must be paired with the
+# RECAPTCHA_SECRET configured on the same instance.
+# Per-form RT queues are defined in config/_default/params.toml.
+[forms]
+	endpoint = "https://formsender-opf.osuosl.org"
+	token = "84aAvf8kelcEsFODjUDC0ZAnnOLW20awQlBWy6aYYCbN5iBIEtPVhmM7DxH2Vl455LiAe1sCpm8lzhxnS1r1mSJQOa"
+	recaptcha_sitekey = "6Lf2ORwtAAAAAKtD7ohbwG4x44-hjjCeALc8NrS4"
+	redirect = "https://openpowerfoundation.org/form-submitted/"
 [forms.mailmonk]
 	URI = "https://mailing.openpower.foundation/subscription/form"

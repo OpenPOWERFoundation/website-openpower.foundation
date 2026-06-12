@@ -1,11 +1,14 @@
 #!parms.toml
-[forms.contact]
-	URI = "http://localhost:8080/forms/contactus/opf"
-[forms.hub]
-	URI = "http://localhost:8080/forms/hub/opf"
-[forms.isarfc]
-	URI = "http://localhost:8080/forms/isarfc/opf"
-[forms.passport]
-	URI = "http://localhost:8080/forms/passport/opf"
+# Local development form config. Point `endpoint` at a locally running formsender
+# (see https://github.com/osuosl/formsender). The reCAPTCHA values below are
+# Google's official test pair, which always validates as success:
+#   site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+#   secret:   6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe  (set as RECAPTCHA_SECRET)
+# `token` must match the formsender instance's TOKEN env var.
+[forms]
+	endpoint = "http://localhost:5000"
+	token = "foo"
+	recaptcha_sitekey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+	redirect = "http://localhost:1313/form-submitted/"
 [forms.mailmonk]
 	URI = "http://localhost:9000/subscription/form"

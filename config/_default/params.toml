@@ -4,3 +4,13 @@
 [author]
 	name = "OpenPOWER Foundation"
 	email = "noreply@openpower.foundation"
+
+# RT queue (formsender `send_to`) for each non-contact form. The contact form
+# picks its queue from the dropdown in content/contact/_index.md. These queue
+# names must match existing queues on the OpenPOWER Foundation RT instance.
+[forms.hub]
+	queue = "hub"
+[forms.passport]
+	queue = "passport"
+[forms.isarfc]
+	queue = "isarfc"

@@ -1,14 +1,14 @@
 <script>
 var formname = "form.isarfcForm";
-var submiturl = "{{ .Site.Params.forms.isarfc.URI }}";
-{{ if .Site.Params.forms.isarfc.goal }}
-var goal = "{{ .Site.Params.forms.isarfc.goal }}";
-{{ end }}
 </script>
 <section id="isarfc">
 <div class="container"><div class="row">
 	<div class="col-lg-8 offset-lg-2 col-md-12"><div class="form">
-	<form role="form" name="isarfcForm" class="isarfcForm" id="isarfcForm" action="" method="post">
+	<form role="form" name="isarfcForm" class="isarfcForm" id="isarfcForm" action="{{ .Site.Params.forms.endpoint }}" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+		<input type="hidden" name="send_to" value="{{ .Site.Params.forms.isarfc.queue }}" />
+		<input type="hidden" name="mail_subject_prefix" value="ISA RFC" />
+		<input type="hidden" name="mail_subject_key" value="requesttype" />
+		<input type="hidden" name="custom_fields" value="Name:name,CompanyName:company,Member:member,RequestType:requesttype,Confidential:confidential" />
 		<div class="form-row">
 			<div class="form-group col-lg-12">
 				<input type="text" class="form-control" name="name" id="name" placeholder="Your First and Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 characters" />
@@ -62,9 +62,7 @@ var goal = "{{ .Site.Params.forms.isarfc.goal }}";
 		</div>
 		<div class="form-row">
 			<div class="form-group col-lg-12">
-				RFC File upload : <input type="file" name="rfcfile" id="rfcfile" class="file" placeholder="Add your RFC file" onChange="getFileContents()"><br>
-				<input type="hidden" name="rfcfilename" id="rfcfilename" value="RFC File">
-				<input type="hidden" name="rfcfilecontent" id="rfcfilecontent" value="">
+				RFC File upload : <input type="file" name="rfcfile" id="rfcfile" class="file" placeholder="Add your RFC file"><br>
 				<span class="comment">Acceptable file formats : text, PDF, LaTeX, patch, diff, tar, zip, xz, bz2, gz</span>
 			</div>
 		</div>
@@ -85,6 +83,7 @@ var goal = "{{ .Site.Params.forms.isarfc.goal }}";
 				</ul>
 			</div>
 		</div>
+		{{ partial "formsender-fields.html" . }}
 		<div class="form-row">
 			<div class="form-group col-lg-12 text-center">
 				<div id="sendmessage">Your request has been sent. Thank you!</div>
@@ -96,13 +95,3 @@ var goal = "{{ .Site.Params.forms.isarfc.goal }}";
 	</div></div>
 </div>
 </section>
-<script>
-function getFileContents() {
-	const reader = new FileReader()
-	reader.onload = handleFileLoad;
-	reader.readAsText(event.target.files[0])
-}
-function handleFileLoad(event) {
-	document.getElementById('rfcfilecontent').value = event.target.result;
-}
-</script>
