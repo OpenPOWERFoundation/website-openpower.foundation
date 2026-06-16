@@ -1,4 +1,8 @@
 (function() {
+// Only run on pages that actually render a changelog timeline.
+if (!document.querySelector(".changelog ol")) {
+	return;
+}
 const changelog = document.querySelector(".changelog ol"),
 elH = document.querySelectorAll(".changelog li > div"),
 arrows = document.querySelectorAll(".changelog .arrows .arrow"),
@@ -74,6 +78,11 @@ function animateTl(scrolling, el, tl) {
 	}
 }
 function setSwipeFn(tl, prev, next) {
+	// Hammer is an optional touch-gesture dependency; skip swipe support if it
+	// isn't loaded rather than throwing a ReferenceError.
+	if (typeof Hammer === 'undefined') {
+		return;
+	}
 	const hammer = new Hammer(tl);
 	hammer.on("swipeleft", () => next.click());
 	hammer.on("swiperight", () => prev.click());

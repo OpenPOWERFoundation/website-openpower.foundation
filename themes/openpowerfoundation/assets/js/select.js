@@ -1,6 +1,9 @@
 'use strict';
 var inputField = document.querySelector('.member-value');
 var dropdown = document.querySelector('.member-list');
+// Only the member-filtered forms (e.g. ISA RFC, Passport) render these
+// elements. Bail out on pages without them so we don't dereference null.
+if (inputField && dropdown) {
 var dropdownArray = [].concat(document.querySelectorAll('li'));
 var dropdownItems = dropdownArray[0];
 var valueArray = [];
@@ -54,3 +57,4 @@ document.addEventListener('click', function (evt) {
 		dropdown.classList.remove('open');
 	}
 });
+}

@@ -1,5 +1,10 @@
 jQuery(document).ready(function($) {
 	"use strict";
+	// formname is set inline by the form partials (hubform, contactform, etc).
+	// Pages without a form don't define it, so skip wiring up validation there.
+	if (typeof formname === 'undefined') {
+		return;
+	}
 	$(formname).submit(function() {
 		var f = $(this).find('.form-group'),
 		ferror = false,
