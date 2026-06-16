@@ -12,7 +12,7 @@ var formname = "form.hubRequestForm";
 			<input type="hidden" name="send_to" value="{{ .Site.Params.forms.hub.queue }}" />
 			<input type="hidden" name="mail_subject_prefix" value="HUB Access Request" />
 			<input type="hidden" name="mail_subject_key" value="projectname" />
-			<input type="hidden" name="custom_fields" value="CompanyName:companyname,CompanyURL:companyurl,ProjectName:projectname,ProjectURL:projecturl,ProjectType:projecttype,Provider:provider,SSHPubKey:sshpubkey,ResourceType:provides,ResourceAddon:addons,SystemType:system,ResourceSystem:operatingsystem" />
+			<input type="hidden" name="custom_fields" value="CompanyName:companyname,CompanyURL:companyurl,ProjectName:projectname,ProjectURL:projecturl,ProjectType:projecttype,Provider:provider,SSHPubKey:sshpubkey,ResourceType:provides,ResourceAddon:addons,SystemType:system,ResourceSystem:operatingsystem,OpenStackFlavor:opnstkflavor" />
 			<input type="hidden" name="provider" id="provider" value="{{ .Title }} ({{ .File.BaseFileName }})">
 			<div class="form-row">
 				<div class="form-group col-lg-6">

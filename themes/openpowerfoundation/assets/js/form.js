@@ -82,6 +82,18 @@ jQuery(document).ready(function($) {
 		if (ferror) {
 			return false;
 		}
+		// formsender requires a single `name` field for the ticket requestor.
+		// Forms that collect the name as separate firstname/lastname inputs
+		// (e.g. the passport form) have no `name` field of their own, so build
+		// one from those parts before the POST.
+		if ($(this).find('[name="name"]').length === 0) {
+			var firstName = $.trim($(this).find('[name="firstname"]').val() || '');
+			var lastName = $.trim($(this).find('[name="lastname"]').val() || '');
+			var fullName = $.trim(firstName + ' ' + lastName);
+			if (fullName !== '') {
+				$('<input>').attr({type: 'hidden', name: 'name', value: fullName}).appendTo(this);
+			}
+		}
 		// Require the reCAPTCHA challenge to be completed before submitting.
 		if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse() === '') {
 			$("#sendmessage").removeClass("show").hide();
