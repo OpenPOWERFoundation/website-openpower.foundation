@@ -116,9 +116,10 @@ var formname = "form.hubRequestForm";
 					</div>
 				{{ end }}
 				<div class="form-group col-lg-6">
-					SSH Public Key File Upload : <input type="file" id="sshpubkeyupload" class="file" placeholder="Select your Public SSH Key File" onChange="getFileContents()" accept=".pub"><br>
-					<input type="hidden" name="sshpubkey" id="sshpubkey" value="">
-					<span class="comment">Please only add your public ssh key file (ending on <u>.pub</u>)</span>
+					SSH Public Key :
+					<textarea class="form-control" name="sshpubkey" id="sshpubkey" rows="3" placeholder="Paste your public SSH key (e.g. the contents of id_ed25519.pub), or select the .pub file below to fill this in."></textarea>
+					<input type="file" id="sshpubkeyupload" class="file" onChange="getFileContents(event)" accept=".pub"><br>
+					<span class="comment">Paste your public SSH key, or select your <u>.pub</u> file to fill it in automatically.</span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -132,13 +133,14 @@ var formname = "form.hubRequestForm";
 </div></div>
 </section>
 <script>
-function getFileContents() {
-	const reader = new FileReader()
-	reader.onload = handleFileLoad;
-	reader.readAsText(event.target.files[0])
-}
-function handleFileLoad(event) {
-	document.getElementById('sshpubkey').value = event.target.result;
+function getFileContents(event) {
+	const file = event.target.files[0];
+	if (!file) { return; }
+	const reader = new FileReader();
+	reader.onload = function(e) {
+		document.getElementById('sshpubkey').value = e.target.result;
+	};
+	reader.readAsText(file);
 }
 </script>
 
