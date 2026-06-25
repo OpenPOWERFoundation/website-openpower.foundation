@@ -35,7 +35,7 @@ enableEmoji = true
 	home = [ "HTML" , "RSS" ]
 	section = [ "HTML", "RSS" ]
 	page = [ "HTML" , "RSS" , "JSON" , "LDIF" ]
-	taxanomy = [ "HTML" , "JSON" , "RSS" ]
+	taxonomy = [ "HTML" , "JSON" , "RSS" ]
 #	term = [ "HTML" , "JSON" ]
 
 [outputFormats]

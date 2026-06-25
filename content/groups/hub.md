@@ -5,19 +5,17 @@ image: thumb-6.jpg
 chair:
   - lancealbertson
 participation: Public
-git: https://git.openpower.foundation/hub/
-discussion: https://discuss.openpower.foundation/c/sig/hub/
-meetingminutes: https://meetingminutes.openpower.foundation/hub/
+git: https://github.com/OpenPOWERFoundation
+discussion: https://discuss.openpowerfoundation.org/c/sig/hub/
+meetingminutes: https://github.com/OpenPOWERFoundation/hub-meetingminutes
 #cadence: Bi-weekly US/EU alternative TZ
 #calendar:
-#  web: https://discuss.openpower.foundation/c/sig/hub/11/l/calendar
-#  ics: webcal://discuss.openpower.foundation/c/sig/hub/l/calendar.ics
+#  web: https://discuss.openpowerfoundation.org/c/sig/hub/11/l/calendar
+#  ics: webcal://discuss.openpowerfoundation.org/c/sig/hub/l/calendar.ics
 #chat:
-#  mattermost: https://chat.openpower.foundation/opf/channels/librebmc
 #  slack: https://app.slack.com/client/T443QD9JA/C01UVKFKUQY
 #  irc: '#openpower-hub on irc.libera.chat'
-#files: https://files.openpower.foundation/s/iZRseq3XLtRcjtX
-#kanban: https://kanban.openpower.foundation/b/hgDqwnbiZDHFR3B3b/librebmc
+#files: https://files.openpowerfoundation.org/s/iZRseq3XLtRcjtX
 date: 2022-06-03
 draft: false
 ---

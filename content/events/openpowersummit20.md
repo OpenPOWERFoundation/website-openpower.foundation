@@ -9,4 +9,3 @@ draft: false
 ---
 
 
-{{< pretalx event="summit2021" >}}

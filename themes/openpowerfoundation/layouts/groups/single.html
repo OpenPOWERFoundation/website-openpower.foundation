@@ -135,7 +135,9 @@ document.write("&nbsp;"+timezone);
 						{{ end }}
 						{{ if .Param "chat" }}
 							<li><i class="fas fa-comments"></i> Chat<ul>
+								{{ if .Param "chat.mattermost" }}
 								<li><a href="{{ .Param "chat.mattermost" }}">OPF Chat</a></li>
+								{{ end }}
 								{{ if .Param "chat.slack" }}
 								<li><a href="{{ .Param "chat.slack" }}">OPF Slack</a></li>
 								{{ end }}
@@ -146,9 +148,6 @@ document.write("&nbsp;"+timezone);
 						{{ end }}
 						{{ if .Param "files" }}
 							<li><a href="{{ .Param "files" }}"><i class="fas fa-folder-open"></i> Files</a></li>
-						{{ end }}
-						{{ if .Param "kanban" }}
-							<li><a href="{{ .Param "kanban" }}"><i class="fas fa-tasks"></i> Kanban</a></li>
 						{{ end }}
 						</ul>
 					{{ if $groupdatafile.members }}

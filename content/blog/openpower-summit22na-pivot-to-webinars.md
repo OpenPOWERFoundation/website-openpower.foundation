@@ -34,7 +34,7 @@ We want to create webinar series that are accessible, simple, and community focu
 
 These new webinars will occur at regular intervals, will have open CFPs for topics in advance for our community, and be streamed to multiple platforms to cover the widest audience. 
 
-We are opening up the [CFP for our first webinar now](https://cfp.openpower.foundation/webinars/cfp/).
+We are opening up the CFP for our first webinar now.
 Please submit your topic and ideas for content.
 If you have questions, please feel free to connect with us on our Slack channel or discussion forum.
 

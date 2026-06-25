@@ -5,5 +5,5 @@ versions:
     description: "Initial release."
   - number: "3.0c"
     date: "2020-05-01"
-    download: "https://files.openpower.foundation/s/XXFoRATEzSFtdG8"
+    download: "https://files.openpowerfoundation.org/s/XXFoRATEzSFtdG8"
     description: "Incorporate errata."

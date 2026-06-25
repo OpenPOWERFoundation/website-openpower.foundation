@@ -1,6 +1,6 @@
 ---
 title: OpenPOWER Foundation Development Platform Reference SP010 Design
-link: https://files.openpower.foundation/s/qKxzR9oPRnygpQp
+link: https://files.openpowerfoundation.org/s/qKxzR9oPRnygpQp
 tags:
   - system
   - power8

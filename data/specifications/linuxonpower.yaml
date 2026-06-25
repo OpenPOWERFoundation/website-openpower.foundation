@@ -1,7 +1,7 @@
 versions:
   - number: "1.1"
     date: 2016-03-24
-    download: https://files.openpower.foundation/s/LmdoZDGkJqp679y
+    download: https://files.openpowerfoundation.org/s/LmdoZDGkJqp679y
   - number: "2.1"
     date: 2016-05-04
     description: conversion from IBM document
@@ -26,4 +26,4 @@ versions:
   - number: "2.9"
     date: 2020-08-12
     description: workgroup note
-    download: https://files.openpower.foundation/s/ZmtZyCGiJ2oJHim
+    download: https://files.openpowerfoundation.org/s/ZmtZyCGiJ2oJHim

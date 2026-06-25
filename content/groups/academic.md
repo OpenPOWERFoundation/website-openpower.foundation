@@ -5,17 +5,15 @@ image: thumb-6.jpg
 chair:
   - ganesannarayanasamy
 participation: Public
-discussion: https://discuss.openpower.foundation/c/bof/academic/26
-meetingminutes: https://meetingminutes.openpower.foundation/academic/
+discussion: https://discuss.openpowerfoundation.org/c/bof/academic/26
+meetingminutes: https://github.com/OpenPOWERFoundation/academic-meetingminutes
 calendar:
-  web: https://discuss.openpower.foundation/c/bof/academic/26/l/calendar
-  ics: webcal://discuss.openpower.foundation/c/bof/academic/l/calendar.ics
+  web: https://discuss.openpowerfoundation.org/c/bof/academic/26/l/calendar
+  ics: webcal://discuss.openpowerfoundation.org/c/bof/academic/l/calendar.ics
 chat:
-  mattermost: https://chat.openpower.foundation/opf/channels/academic
   slack: https://app.slack.com/client/T443QD9JA/C0317NSP0JG
   irc: '#openpower-academic on irc.libera.chat'
-#files: https://files.openpower.foundation/s/iZRseq3XLtRcjtX
-#kanban: https://kanban.openpower.foundation/b/hgDqwnbiZDHFR3B3b/librebmc
+#files: https://files.openpowerfoundation.org/s/iZRseq3XLtRcjtX
 date: 2022-02-04
 draft: false
 ---

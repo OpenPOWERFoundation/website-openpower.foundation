@@ -4,8 +4,6 @@ eventdates:
   from: 2022-11-12
 eventplace: "Hotel Adolphus, Dallas, Texas, USA"
 #callforpresentation:
-register: https://registration.openpower.foundation/academic/ADGSC22/
-schedule: https://cfp.openpower.foundation/sc22openpoweradgworkshop/schedule/
 #recordings:
 #sponsors:
 #  -
@@ -21,6 +19,4 @@ This event will take place at the __Hotel Adolphus__, located on 1321 Commerce S
 This workshop will foster open collaboration between industry and academia, led by the OpenPOWER foundation.
 The OpenPOWER partners, such as IBM and others, will address current challenges and problems in Open Chip Design, AI, HPC and Cloud.
 
-{{< prereg organizer="academic" event="ADGSC22" >}}
 
-{{< pretalx event="sc22openpoweradgworkshop" >}}

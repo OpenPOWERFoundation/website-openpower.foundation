@@ -100,13 +100,4 @@
 	</div>
 </div>
 </section>
-<section class="teaser__section _navy  py-4">
-<div class="container text-center pb-4 pb-lg-0">
-	<h2 class="teaser__title">{{ .Param "subscribe.title" }}</h2>
-	{{ range .Param "subscribe.p" }}
-		<p>{{ . }}</p>
-	{{ end }}
-	{{ partial "mailmonk.html" "36f99e0c-a286-4fbc-b642-43eb957d5e07" }}
-</div>
-</section>
 {{ partial "footer.html" . }}

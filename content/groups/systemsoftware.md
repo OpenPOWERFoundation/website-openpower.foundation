@@ -11,16 +11,13 @@ members:
   - 3mdeb
   - stevenmunroe
 participation: 'Members'
-git: https://git.openpower.foundation/systemsoftware
-discussion: https://discuss.openpower.foundation/c/twg/syssoftware/19
-meetingminutes: https://meetingminutes.openpower.foundation/systemsoftware/
+git: https://github.com/OpenPOWERFoundation
+discussion: https://discuss.openpowerfoundation.org/c/twg/syssoftware/19
+meetingminutes: https://github.com/OpenPOWERFoundation/systemsoftware-meetingminutes
 calendar:
-  web: https://discuss.openpower.foundation/c/twg/syssoftware/19/l/calendar
-  ics: webcal://discuss.openpower.foundation/c/twg/syssoftware/l/calendar.ics
-chat:
-  mattermost: https://chat.openpower.foundation/opf/channels/systemsoftware
-files: https://files.openpower.foundation/f/475
-kanban: https://kanban.openpower.foundation/b/7ZvTJoH3sFbTF25Gk/system-software
+  web: https://discuss.openpowerfoundation.org/c/twg/syssoftware/19/l/calendar
+  ics: webcal://discuss.openpowerfoundation.org/c/twg/syssoftware/l/calendar.ics
+files: https://files.openpowerfoundation.org/f/475
 date: 2022-03-08
 draft: false
 ---

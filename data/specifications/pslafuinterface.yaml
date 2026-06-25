@@ -5,11 +5,11 @@ versions:
   - number: 1.0.0
     date: 2015-10-20
     description: workgroup specification
-    download: https://files.openpower.foundation/s/drQqcZEcBfLEYcf
+    download: https://files.openpowerfoundation.org/s/drQqcZEcBfLEYcf
   - number: 1.0.1
     date: 2016-09-13
     description: clarification data alignment, parity, partial cacheline
-    download: https://files.openpower.foundation/s/yLreYMysGbZiYiT
+    download: https://files.openpowerfoundation.org/s/yLreYMysGbZiYiT
   - number: 1.1
     date: 2016-05-18
     description: conversion from IBM internal documentation
@@ -22,4 +22,4 @@ versions:
   - number: 2.0
     date: 2017-07-20
     description: workgroup specification
-    download: https://files.openpower.foundation/s/SxLFti5e4a5gBTb
+    download: https://files.openpowerfoundation.org/s/SxLFti5e4a5gBTb

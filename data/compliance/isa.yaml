@@ -11,7 +11,7 @@ versions:
   - number: "1.0.0"
     date: 2018-01-10
     description: Approved specification
-    dwonload: https://files.openpower.foundation/s/2EKs2zpwPQxYNZm
+    dwonload: https://files.openpowerfoundation.org/s/2EKs2zpwPQxYNZm
   - number: "2.0.1"
     date: 2019-05-13
     description: Updated for ISA 3.0b through end of Part I
@@ -48,4 +48,4 @@ versions:
   - number: "2.1.0"
     date: 2020-04-07
     description: Approved Specification
-    download: https://files.openpower.foundation/s/TkLmPi2mpywijNA
+    download: https://files.openpowerfoundation.org/s/TkLmPi2mpywijNA

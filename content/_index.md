@@ -53,10 +53,6 @@ sections:
       link: /groups/
 dark:
   - With its open ecosystem approach, active participation from its global membership base and powerful foundation of the POWER ISA, the OpenPOWER Foundation is the premiere organization to facilitate truly effective collaboration and drive meaningful, accessible innovation across the open hardware industry.
-subscribe:
-  title: Subscribe to the OpenPOWER newsletter.
-  p:
-    - Sign up with your email address to receive news and updates.
 date: 2022-01-03
 draft: false
 ---

@@ -3,7 +3,6 @@
 This repository is the source that builds the static front public website of the OpenPOWER Foundation.
 
 - https://openpowerfoundation.org/
-- https://openpower.foundation/
 
 ## Static Site ##
 

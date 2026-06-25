@@ -1,6 +1,6 @@
 ---
 title: IBM POWER10 Processor User Manual
-link: https://files.openpower.foundation/s/EgCy7C43p2NSRfR
+link: https://files.openpowerfoundation.org/s/EgCy7C43p2NSRfR
 tags:
   - processor
   - cpu

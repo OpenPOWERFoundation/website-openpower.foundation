@@ -5,19 +5,17 @@ image: thumb-5.jpg
 chair:
   - curtwollbrink
 participation: Members
-git: https://git.openpower.foundation/accelerator/
-discussion: https://discuss.openpower.foundation/c/twg/accelerator/
-meetingminutes: https://meetingminutes.openpower.foundation/accelerator/
+git: https://github.com/OpenPOWERFoundation
+discussion: https://discuss.openpowerfoundation.org/c/twg/accelerator/
+meetingminutes: https://github.com/OpenPOWERFoundation/accelerator-meetingminutes
 cadence: Bi-weekly
 calendar:
-  web: https://discuss.openpower.foundation/c/twg/accelerator/31/l/calendar
-  ics: webcal://discuss.openpower.foundation/c/twg/accelerator/l/calendar.ics
+  web: https://discuss.openpowerfoundation.org/c/twg/accelerator/31/l/calendar
+  ics: webcal://discuss.openpowerfoundation.org/c/twg/accelerator/l/calendar.ics
 chat:
-  mattermost: https://chat.openpower.foundation/opf/channels/accelerator
   slack: https://app.slack.com/client/T443QD9JA/C02GBQ657Q8
   irc: '#openpower-accelerator on irc.libera.chat'
-files: https://files.openpower.foundation/apps/files/?dir=/Accelerator&fileid=458
-kanban: https://kanban.openpower.foundation/b/EeZfegyWesJfz6w4s/accelerator
+files: https://files.openpowerfoundation.org/apps/files/?dir=/Accelerator&fileid=458
 date: 2022-03-14
 draft: false
 ---

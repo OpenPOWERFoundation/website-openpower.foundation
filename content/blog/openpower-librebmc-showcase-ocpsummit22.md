@@ -35,7 +35,7 @@ and the platform adheres to the [Open Compute Project’s](https://www.opencompu
 LibreBMC was built using open-source tooling and with open source peripheral IP such as [LiteX](https://github.com/enjoy-digital/litex).  
 
 [LibreBMC](https://openpowerfoundation.org/groups/librebmc/) is an open-source community project guided by the OPF Special Integration Group of the same name.
-The project details, including links to all source code and documentation, can be found [here](https://git.openpower.foundation/librebmc/librebmc).
+The project details, including links to all source code and documentation, can be found [here](https://github.com/OpenPOWERFoundation/librebmc).
 It also has inspired [Axiado Corporation](https://axiado.com/), an AI-enhanced hardware security company,
 and [new OpenPOWER Foundation Silver member](https://openpowerfoundation.org/blog/axiado-joins-openpower/),
 to develop their own datacenter-ready secure control module (DC-SCM), Smart SCM solution, utilizing both the POWER ISA and OpenBMC firmware.

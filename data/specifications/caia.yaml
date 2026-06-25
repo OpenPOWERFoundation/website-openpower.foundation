@@ -14,7 +14,7 @@ versions:
   - number: "1.0"
     date: 2016-01-13
     description: workgroup specification
-    download: https://files.openpower.foundation/s/kpYmfrSREq8wFXR
+    download: https://files.openpowerfoundation.org/s/kpYmfrSREq8wFXR
   - number: "1.1"
     date: 2017-06-15
     description: conversion from framemaker
@@ -24,4 +24,4 @@ versions:
   - number: "1.9"
     date: 2020-03-23
     description: public review
-    download: https://files.openpower.foundation/s/EMFd9nPCx8N8tPr
+    download: https://files.openpowerfoundation.org/s/EMFd9nPCx8N8tPr

@@ -8,7 +8,7 @@ feedbackprocess:
     url: /isarfc/
   - title: Request for Change Feedback for "ISA TWG members"
     description: "Members can provide feedback using OPF Git directly, or the above form."
-    url: https://git.openpower.foundation/isa/PowerISA
+    url: https://github.com/OpenPOWERFoundation/PowerISA
 aliases:
   - "powerisa/"
   - "power31/"

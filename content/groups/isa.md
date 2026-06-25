@@ -5,19 +5,17 @@ image: thumb-5.jpg
 chair:
   - bradfrey
 participation: Members
-git: https://git.openpower.foundation/isa/
-discussion: https://discuss.openpower.foundation/c/twg/isa
-meetingminutes: https://meetingminutes.openpower.foundation/isa/
+git: https://github.com/OpenPOWERFoundation
+discussion: https://discuss.openpowerfoundation.org/c/twg/isa
+meetingminutes: https://github.com/OpenPOWERFoundation/isa-meetingminutes
 cadence: Bi-weekly US/AU alternative TZ
 calendar:
-  web: https://discuss.openpower.foundation/c/twg/isa/18/l/calendar
-  ics: webcal://discuss.openpower.foundation/c/twg/isa/l/calendar.ics
+  web: https://discuss.openpowerfoundation.org/c/twg/isa/18/l/calendar
+  ics: webcal://discuss.openpowerfoundation.org/c/twg/isa/l/calendar.ics
 chat:
-  mattermost: https://chat.openpower.foundation/opf/channels/isa
   slack: https://app.slack.com/client/T443QD9JA/C02A1UACN1K
   irc: '#openpower-isa on irc.libera.chat (invite required)'
-files: https://files.openpower.foundation/apps/files/?dir=/ISA
-kanban: https://kanban.openpower.foundation/b/W2J9MaBaQtDCNXbvx/power-isa
+files: https://files.openpowerfoundation.org/apps/files/?dir=/ISA
 date: 2021-08-21
 draft: false
 ---

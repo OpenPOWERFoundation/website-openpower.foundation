@@ -116,33 +116,29 @@
 ### governance
 [[governance]]
 	name = "Certificate of Incorporation"
-	url = "https://files.openpower.foundation/s/xAkXWTxTxRqTeaM"
+	url = "https://files.openpowerfoundation.org/s/xAkXWTxTxRqTeaM"
 	pre = "far fa-file-pdf"
 	#post = "fas fa-external-link-alt"
 	weight = -1900
 [[governance]]
 	name = "Bylaws"
-	url = "https://files.openpower.foundation/s/yYcB2C2z2pnwpcm"
+	url = "https://files.openpowerfoundation.org/s/yYcB2C2z2pnwpcm"
 	pre = "far fa-file-pdf"
 	#post = "fas fa-external-link-alt"
 	weight = -1800
 [[governance]]
 	name = "IP Rights Policy"
-	url = "https://files.openpower.foundation/s/eMq2rPmnbKofrDC"
+	url = "https://files.openpowerfoundation.org/s/eMq2rPmnbKofrDC"
 	pre = "far fa-file-pdf"
 	#post = "fas fa-external-link-alt"
 	weight = -1700
 [[governance]]
 	name = "Anti Trust Guidelines"
-	url = "https://files.openpower.foundation/s/k5Hny649q3XHSqk"
+	url = "https://files.openpowerfoundation.org/s/k5Hny649q3XHSqk"
 	pre = "far fa-file-pdf"
 	weight = -1600
 
 ###
-[[code]]
-	name = "Git"
-	pre = "fas fa-code-branch"
-	url = "https://git.openpower.foundation/"
 [[code]]
 	name = "GitHub"
 	pre = "fab fa-github"
@@ -156,11 +152,7 @@
 [[discuss]]
 	name = "Discuss"
 	pre = "fas fa-comments"
-	url = "https://discuss.openpower.foundation/categories"
-[[discuss]]
-	name = "Chat"
-	pre = "fas fa-comment-dots"
-	url = "https://chat.openpower.foundation"
+	url = "https://discuss.openpowerfoundation.org/categories"
 [[discuss]]
 	name = "Slack"
 	pre = "fab fa-slack"

@@ -15,5 +15,3 @@
 	token = "84aAvf8kelcEsFODjUDC0ZAnnOLW20awQlBWy6aYYCbN5iBIEtPVhmM7DxH2Vl455LiAe1sCpm8lzhxnS1r1mSJQOa"
 	recaptcha_sitekey = "6Lf2ORwtAAAAAKtD7ohbwG4x44-hjjCeALc8NrS4"
 	redirect = "https://openpowerfoundation.org/form-submitted/"
-[forms.mailmonk]
-	URI = "https://mailing.openpower.foundation/subscription/form"

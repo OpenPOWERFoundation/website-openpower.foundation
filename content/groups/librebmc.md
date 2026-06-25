@@ -6,19 +6,17 @@ chair:
   - jaremykerr
   - karolgugala
 participation: Public
-git: https://git.openpower.foundation/librebmc/
-discussion: https://discuss.openpower.foundation/c/sig/librebmc/
-meetingminutes: https://meetingminutes.openpower.foundation/librebmc/
+git: https://github.com/OpenPOWERFoundation/librebmc
+discussion: https://discuss.openpowerfoundation.org/c/sig/librebmc/
+meetingminutes: https://github.com/OpenPOWERFoundation/librebmc-meetingminutes
 cadence: Bi-weekly US/EU alternative TZ
 calendar:
-  web: https://discuss.openpower.foundation/c/sig/librebmc/11/l/calendar
-  ics: webcal://discuss.openpower.foundation/c/sig/librebmc/l/calendar.ics
+  web: https://discuss.openpowerfoundation.org/c/sig/librebmc/11/l/calendar
+  ics: webcal://discuss.openpowerfoundation.org/c/sig/librebmc/l/calendar.ics
 chat:
-  mattermost: https://chat.openpower.foundation/opf/channels/librebmc
   slack: https://app.slack.com/client/T443QD9JA/C01UVKFKUQY
   irc: '#librebmc on irc.libera.chat'
-files: https://files.openpower.foundation/s/iZRseq3XLtRcjtX
-kanban: https://kanban.openpower.foundation/b/hgDqwnbiZDHFR3B3b/librebmc
+files: https://files.openpowerfoundation.org/s/iZRseq3XLtRcjtX
 date: 2021-06-12
 draft: false
 ---

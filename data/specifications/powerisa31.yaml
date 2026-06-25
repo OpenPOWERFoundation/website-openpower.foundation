@@ -1,5 +1,5 @@
 versions:
   - number: "3.1"
     date: "2020-05-01"
-    download: "https://files.openpower.foundation/s/bo728kgiWfgMHAr"
+    download: "https://files.openpowerfoundation.org/s/bo728kgiWfgMHAr"
     description: "Initial release."

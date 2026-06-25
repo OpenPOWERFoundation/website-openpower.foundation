@@ -38,7 +38,7 @@ versions:
   - number: "1.0"
     date: 2016-03-15
     description: Approval version - Cleaned URLs
-    download: https://files.openpower.foundation/s/zqHSbSMY5wCBWFQ
+    download: https://files.openpowerfoundation.org/s/zqHSbSMY5wCBWFQ
   - number: "1.1"
     date: 2017-06-06
     description: Updated Intro to reflect changes to submission process via web automation
@@ -63,4 +63,4 @@ versions:
   - number: "2.0"
     date: 2018-04-19
     description: workgroup specification
-    download: https://files.openpower.foundation/s/d5MjKE4kc39Xxcf
+    download: https://files.openpowerfoundation.org/s/d5MjKE4kc39Xxcf

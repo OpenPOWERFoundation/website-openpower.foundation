@@ -10,5 +10,3 @@
 	token = "foo"
 	recaptcha_sitekey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
 	redirect = "http://localhost:1313/form-submitted/"
-[forms.mailmonk]
-	URI = "http://localhost:9000/subscription/form"
