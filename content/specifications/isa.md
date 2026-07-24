@@ -2,13 +2,15 @@
 title: "Instruction Set Architecture"
 group: isa
 publicreview: false
-feedbackprocess:
-  - title: Request For Change Feedback for "non ISA TWG members"
-    description: "This feedback process uses the RFC method, which we divide in 3 types : _minor changes_, _formal proposal_, or _RFC_."
-    url: /isarfc/
-  - title: Request for Change Feedback for "ISA TWG members"
-    description: "Members can provide feedback using OPF Git directly, or the above form."
-    url: https://github.com/OpenPOWERFoundation/PowerISA
+approvedrfcs:
+  title: "Approved RFCs for upcoming POWER ISA version"
+  items:
+    - title: "RFC02653: Dense Math Facility"
+      download: "PLACEHOLDER_LINK"
+    - title: "RFC02654: SHA2 and SHA3 Compute Instructions"
+      download: "PLACEHOLDER_LINK"
+    - title: "RFC02657: AES Acceleration Instructions"
+      download: "PLACEHOLDER_LINK"
 aliases:
   - "powerisa/"
   - "power31/"
