@@ -6,11 +6,11 @@ approvedrfcs:
   title: "Approved RFCs for upcoming POWER ISA version"
   items:
     - title: "RFC02653: Dense Math Facility"
-      download: "PLACEHOLDER_LINK"
+      download: "https://files.openpowerfoundation.org/s/fe6ntdpMJqFebez"
     - title: "RFC02654: SHA2 and SHA3 Compute Instructions"
-      download: "PLACEHOLDER_LINK"
+      download: "https://files.openpowerfoundation.org/s/G2yaKZYdSkiZjYW"
     - title: "RFC02657: AES Acceleration Instructions"
-      download: "PLACEHOLDER_LINK"
+      download: "https://files.openpowerfoundation.org/s/JJp8iLyjtZktocS"
 aliases:
   - "powerisa/"
   - "power31/"
@@ -32,13 +32,15 @@ date: 2021-08-30
 draft: false
 ---
 
-The Power Instruction Set Architecture (ISA) Version is a specification that describes the architecture used by POWER processors.  
-It defines the instructions the processor executes.  
+The Power Instruction Set Architecture (ISA) Version is a specification that describes the architecture used by POWER
+processors.  It defines the instructions the processor executes.
 
-It is comprised of three books and a set of appendices.  
+It is comprised of three books and a set of appendices.
 - Book I
-  - Power ISA User Instruction Set Architecture, covers the base instruction set and related facilities available to the application programmer.
+  - Power ISA User Instruction Set Architecture, covers the base instruction set and related facilities available to
+    the application programmer.
 - Book II
-  - Power ISA Virtual Environment Architecture, defines the storage model and related instructions and facilities available to the application programmer.
+  - Power ISA Virtual Environment Architecture, defines the storage model and related instructions and facilities
+    available to the application programmer.
 - Book III
   - Power ISA Operating Environment Architecture, defines the supervisor instructions and related facilities.
