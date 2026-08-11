@@ -38,14 +38,13 @@
 	<div class="col-lg-3"></div>
 	<div class="col-lg-6 content">
 		<div><p>{{ .Content }}</p></div>
-		{{ if .Param "approvedrfcs" }}
-			{{ $approvedrfcs := (.Param "approvedrfcs") }}
-			<h3>{{ $approvedrfcs.title }}</h3>
-			<ul>
-			{{ range $approvedrfcs.items }}
-				<li><a href="{{ .download }}"><i class="far fa-file-pdf mr-2"></i>&nbsp;{{ .title }}</a></li>
+		{{ if .Param "feedbackprocess"}}
+			{{ range $feedbackprocess := (.Param "feedbackprocess") }}
+				<a href="{{ $feedbackprocess.url }}"><div class="feedback btn btn-outline-primary">
+					<h3>{{ $feedbackprocess.title }}</h3>
+					{{ $feedbackprocess.description | markdownify }}
+				</div></a><br><br>
 			{{ end }}
-			</ul>
 		{{ end }}
 		{{ if .Param "feedback" }}
 			{{ partial "feedbackform.html" . }}
