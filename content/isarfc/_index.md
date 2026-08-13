@@ -1,7 +1,7 @@
 ---
 title: OpenPOWER ISA RFC Submission
 date: 2022-07-13
-draft: false
+draft: true
 ---
 
 This is a request form for submitting your OpenPOWER ISA RFC Submission process.  
