@@ -5,6 +5,7 @@ link: https://www.raptorcs.com
 level: platinum
 country: United States of America
 joined: 2018
+cancelled: 2026-09-01
 date: 2025-04-30
 draft: false
 ---
