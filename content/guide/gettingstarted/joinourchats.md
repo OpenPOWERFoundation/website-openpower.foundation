@@ -8,5 +8,5 @@ draft: false
 All of our communication channels are bridged, so whichever preferred method you choose whether it be through Slack, IRC, or our own Mattermost server,
 you will be kept up to date.  
 
-- Join [Slack](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-9l4fabj6-C55eMvBqAPTbzlDS1b7bzQ).
+- Join [Slack](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-3xqxcgl44-LWbZ8kPP7hdPDPH2AR0K6A).
 - Join us on IRC, on Libera.chat or OFTC
