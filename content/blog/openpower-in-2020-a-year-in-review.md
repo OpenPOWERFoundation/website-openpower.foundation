@@ -53,7 +53,7 @@ Enabling developers to test applications based on the POWER ISA was an important
 
 Despite a challenging environment this year, our community found new ways to connect and collaborate. This year’s OpenPOWER Summit was a virtual event for the first time, and it was the most highly attended event we’ve held to date.
 
-We also launched our OpenPOWER Foundation Slack channel, which has been instrumental in allowing organic collaboration and discussion between members of our community. Anyone interested in learning more about OpenPOWER can [quickly and easily join the channel.](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-9l4fabj6-C55eMvBqAPTbzlDS1b7bzQ)
+We also launched our OpenPOWER Foundation Slack channel, which has been instrumental in allowing organic collaboration and discussion between members of our community. Anyone interested in learning more about OpenPOWER can [quickly and easily join the channel.](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-3xqxcgl44-LWbZ8kPP7hdPDPH2AR0K6A)
 
 Last but not least, we kicked off important collaborations with other Linux Foundation projects this year. Bridging the gap between various Linux Foundation communities across AI, Cloud Native, Edge, Networking and more will help us develop new applications for POWER technology.
 
