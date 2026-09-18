@@ -8,5 +8,6 @@
 [forms]
 	endpoint = "http://localhost:5000"
 	token = "foo"
-	recaptcha_sitekey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+	# Cloudflare Turnstile test site key, which always passes
+	turnstile_sitekey = "1x00000000000000000000AA"
 	redirect = "http://localhost:1313/form-submitted/"

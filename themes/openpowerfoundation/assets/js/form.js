@@ -94,10 +94,12 @@ jQuery(document).ready(function($) {
 				$('<input>').attr({type: 'hidden', name: 'name', value: fullName}).appendTo(this);
 			}
 		}
-		// Require the reCAPTCHA challenge to be completed before submitting.
-		if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse() === '') {
+		// Require the Turnstile challenge to be completed before submitting.
+		// The widget writes its token into a hidden cf-turnstile-response input
+		// inside this form, so an empty value means it has not finished.
+		if ($(this).find('.cf-turnstile').length && !$(this).find('[name="cf-turnstile-response"]').val()) {
 			$("#sendmessage").removeClass("show").hide();
-			$("#errormessage").html("Please complete the reCAPTCHA challenge before submitting.").addClass("show").show();
+			$("#errormessage").html("Please complete the challenge before submitting.").addClass("show").show();
 			return false;
 		}
 		// Valid: allow the normal POST to formsender. formsender validates the

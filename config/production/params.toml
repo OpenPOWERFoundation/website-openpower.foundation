@@ -13,5 +13,7 @@
 [forms]
 	endpoint = "https://formsender-opf.osuosl.org"
 	token = "84aAvf8kelcEsFODjUDC0ZAnnOLW20awQlBWy6aYYCbN5iBIEtPVhmM7DxH2Vl455LiAe1sCpm8lzhxnS1r1mSJQOa"
-	recaptcha_sitekey = "6Lf2ORwtAAAAAKtD7ohbwG4x44-hjjCeALc8NrS4"
+	# Cloudflare Turnstile site key. Public, and paired with the
+	# TURNSTILE_SECRET formsender-opf reads from its data bag.
+	turnstile_sitekey = "0x4AAAAAAE8QPZ0FYNG-W7Zb"
 	redirect = "https://openpowerfoundation.org/form-submitted/"
