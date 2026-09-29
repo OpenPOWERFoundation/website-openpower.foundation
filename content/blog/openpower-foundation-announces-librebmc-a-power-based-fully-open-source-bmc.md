@@ -36,4 +36,4 @@ LibreBMC will be built using completely open source tooling enabled by SymbiFlow
 
 Once complete, LibreBMC will run software from [OpenBMC](https://www.openbmc.org/), a Linux Foundation project for open source BMC firmware. Representatives from OpenBMC said, “it’s great to see our open source software running on open source hardware.”
 
-[Click here](https://openpowerfoundation.org/technical/working-groups/) to learn more about LibreBMC. If you have any questions or feedback, you can also [join our Slack workspace](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-9l4fabj6-C55eMvBqAPTbzlDS1b7bzQ), or find us on [Twitter at @openpowerorg](https://twitter.com/openpowerorg)!
+[Click here](https://openpowerfoundation.org/technical/working-groups/) to learn more about LibreBMC. If you have any questions or feedback, you can also [join our Slack workspace](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-3xqxcgl44-LWbZ8kPP7hdPDPH2AR0K6A), or find us on [Twitter at @openpowerorg](https://twitter.com/openpowerorg)!

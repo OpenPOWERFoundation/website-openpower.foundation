@@ -56,7 +56,7 @@ said "_Speaking on behalf of the OCP Community, we are excited to see the progre
 which utilizes OCP's DC-SCM standard that provides a wonderful open interface for platform resilience, management and orchestration capability,
 and enables OpenPOWER’s LibreBMC, to increase security and transparency for a next level BMC that supports POWER, ARM and x86 based systems._"
 
-If you have any questions or feedback, you can also [join our Slack workspace](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-9l4fabj6-C55eMvBqAPTbzlDS1b7bzQ),
+If you have any questions or feedback, you can also [join our Slack workspace](https://join.slack.com/t/openpowerfoundation/shared_invite/zt-3xqxcgl44-LWbZ8kPP7hdPDPH2AR0K6A),
 or find us on [Twitter at @openpowerorg](https://twitter.com/openpowerorg)!
 
 
