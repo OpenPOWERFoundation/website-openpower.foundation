@@ -55,6 +55,14 @@ var formname = "form.passportForm";
 				</div>
 			{{ end }}
 		</div>
+		{{ partial "formsender-labels.html" (slice
+			(dict "name" "uid" "label" "OPF Passport user ID")
+			(dict "name" "firstname" "label" "First name")
+			(dict "name" "lastname" "label" "Last name")
+			(dict "name" "displayname" "label" "Display name")
+			(dict "name" "member" "label" "Member affiliation")
+			(dict "name" "workgroups" "label" "Working groups")
+		) }}
 		{{ partial "formsender-fields.html" . }}
 		<div class="form-row">
 			<div class="form-group col-lg-12 text-center">

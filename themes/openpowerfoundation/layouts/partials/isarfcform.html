@@ -83,6 +83,13 @@ var formname = "form.isarfcForm";
 				</ul>
 			</div>
 		</div>
+		{{ partial "formsender-labels.html" (slice
+			(dict "name" "company" "label" "Company")
+			(dict "name" "member" "label" "OpenPOWER Foundation member")
+			(dict "name" "requesttype" "label" "Request type")
+			(dict "name" "confidential" "label" "Confidential RFC")
+			(dict "name" "message" "label" "Message")
+		) }}
 		{{ partial "formsender-fields.html" . }}
 		<div class="form-row">
 			<div class="form-group col-lg-12 text-center">
