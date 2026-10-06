@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 {{ $filename := .File.BaseFileName }}
-{{ $groupdatafile := index $.Site.Data.groups $filename }}
+{{ $groupdatafile := index hugo.Data.groups $filename }}
 <main id="main">
 <section id="workgroupsingle">
 	<div id="workgroupsingle" class="container-fluid">
@@ -42,7 +42,7 @@
 							</ul></li>
 						{{ end }}
 						{{ if .Param "wgtype" }}
-							{{ $data := index $.Site.Data }}
+							{{ $data := index hugo.Data }}
 							{{ $wgtype := .Param "wgtype" }}
 							{{ range $data.workgroups }}
 								{{ if eq $wgtype .id }}
