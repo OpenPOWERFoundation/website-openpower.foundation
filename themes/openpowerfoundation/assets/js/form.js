@@ -5,13 +5,90 @@ jQuery(document).ready(function($) {
 	if (typeof formname === 'undefined') {
 		return;
 	}
+	// A select option can carry data-allow='{"field": ["value", ...]}', which
+	// limits the choices in those fields while it is selected, such as a
+	// system that is only offered as a VM. A field whose current choice is no
+	// longer allowed moves to its first allowed one. Limits apply in form
+	// order, so an earlier choice can clear a later one that would limit it
+	// back, such as POWER10 clearing an addon that is bare metal only.
+	function applyLimits(form) {
+		var limited = {};
+		$(form).find('option[data-allow]').each(function() {
+			$.each(JSON.parse($(this).attr('data-allow')), function(name) {
+				limited[name] = true;
+			});
+		});
+		$.each(limited, function(name) {
+			$(form).find('select[name="' + name + '"] option').prop('disabled', false);
+		});
+		$(form).find('select').each(function() {
+			var allow = $(this).find('option:selected').attr('data-allow');
+			if (allow === undefined) {
+				return;
+			}
+			$.each(JSON.parse(allow), function(name, values) {
+				if (!values) {
+					return;
+				}
+				var select = $(form).find('select[name="' + name + '"]');
+				select.find('option').each(function() {
+					if ($.inArray(this.value, values) === -1) {
+						$(this).prop('disabled', true);
+					}
+				});
+				if (select.find('option:selected').prop('disabled')) {
+					select.val(select.find('option:not(:disabled)').first().val());
+				}
+			});
+		});
+	}
+	// Blocks marked data-show-if="field" data-show-match="regexp" are shown
+	// only while that field's value matches. Hidden blocks have their fields
+	// disabled, so they are neither validated nor sent. A block inside a
+	// hidden block, or one whose field is itself disabled, stays hidden.
+	function syncConditional(form) {
+		applyLimits(form);
+		$(form).find('[data-show-if]').each(function() {
+			var block = $(this);
+			var field = $(form).find('[name="' + block.attr('data-show-if') + '"]');
+			var match = new RegExp(block.attr('data-show-match'), 'i');
+			// A radio or checkbox group matches on its checked values
+			var value = field.is(':radio, :checkbox') ?
+				field.filter(':checked').map(function() { return this.value; }).get().join(' ') :
+				field.val();
+			var show = field.length > 0 && !field.prop('disabled') &&
+				match.test(value || '') &&
+				block.parents('[data-show-if]').filter(function() {
+					return this.style.display === 'none';
+				}).length === 0;
+			block.toggle(show);
+			block.find('input, select, textarea').prop('disabled', !show);
+			if (!show) {
+				block.find('.validation').html('').hide();
+			}
+		});
+	}
+	$(formname).each(function() {
+		var form = this;
+		syncConditional(form);
+		$(form).on('change', 'input, select, textarea', function() {
+			syncConditional(form);
+		});
+	});
+	// Browsers restore field values when coming back to a cached page, so
+	// resync then too.
+	$(window).on('pageshow', function() {
+		$(formname).each(function() {
+			syncConditional(this);
+		});
+	});
 	$(formname).submit(function() {
 		var f = $(this).find('.form-group'),
 		ferror = false,
 		emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 		f.children('input').each(function() {
 			var i = $(this);
-			var rule = i.attr('data-rule');
+			var rule = i.prop('disabled') ? undefined : i.attr('data-rule');
 			if (rule !== undefined) {
 				var ierror = false;
 				var pos = rule.indexOf(':', 0);
@@ -54,7 +131,7 @@ jQuery(document).ready(function($) {
 		});
 		f.children('textarea').each(function() {
 			var i = $(this);
-			var rule = i.attr('data-rule');
+			var rule = i.prop('disabled') ? undefined : i.attr('data-rule');
 			if (rule !== undefined) {
 				var ierror = false;
 				var pos = rule.indexOf(':', 0);
@@ -78,6 +155,17 @@ jQuery(document).ready(function($) {
 				}
 				i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
 			}
+		});
+		f.children('select').each(function() {
+			var i = $(this);
+			if (i.prop('disabled') || i.attr('data-rule') !== 'required') {
+				return;
+			}
+			var ierror = i.val() === '' || i.val() === null;
+			if (ierror) {
+				ferror = true;
+			}
+			i.next('.validation').html(ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'Please choose an option') : '').show('blind');
 		});
 		if (ferror) {
 			return false;
