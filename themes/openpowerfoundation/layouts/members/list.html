@@ -10,7 +10,7 @@
 	</div>
 	</section>
 	<div class="row">
-	{{ $data := index $.Site.Data }}
+	{{ $data := index hugo.Data }}
 	{{ range $data.memberlevels }}
 		<div class="col-lg-12">
 			<div class="membership-level pt-5 pb-0 pb-lg-3">

@@ -32,7 +32,7 @@
 			{{ if .Param "level" }}
 				<div>Member Level :
 					{{ $level := .Param "level" }}
-					{{ $data := index $.Site.Data }}
+					{{ $data := index hugo.Data }}
 					{{ range $data.memberlevels }}
 						{{ $key := .identifier }}
 						{{ if eq $level $key }}
@@ -57,7 +57,7 @@
 				{{ $wgname := .Title }}
 				{{ $wgurl := .Permalink }}
 				{{ $wgcode := path.Base .Permalink }}
-				{{ range $wgmembers := (index $.Site.Data.groups $wgcode) }}
+				{{ range $wgmembers := (index hugo.Data.groups $wgcode) }}
 					{{ range $wgmember := $wgmembers }}
 						{{ if eq $wgmember $membercode }}
 							<li><a href="{{ $wgurl }}">{{ $wgname }}</a></li>

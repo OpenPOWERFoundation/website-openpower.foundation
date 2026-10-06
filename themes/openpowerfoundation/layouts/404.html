@@ -9,7 +9,7 @@
 	</div>
 	<div class="row">
 		<p>Maybe you're looking for this :</p>
-		{{ range $.Site.Data.fourofour.alternatebuttons }}
+		{{ range hugo.Data.fourofour.alternatebuttons }}
 			<div class="col-lg-3"><a class="btn btn-outline-primary" href="{{ .link | relURL }}">{{ .title }}</a></div>
 		{{ end }}
 	</div>

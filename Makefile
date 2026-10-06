@@ -48,6 +48,10 @@ serve:
 servedraft:
 	$(HUGO) server --environment=development --port 1314 --watch --noHTTPCache --disableFastRender --buildDrafts --buildFuture --buildExpired
 
+.PHONY: formsender
+formsender:
+	./scripts/formsender-test.sh
+
 .PHONY: clean
 clean:
 	@rm -rf public/

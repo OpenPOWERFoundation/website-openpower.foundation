@@ -1,0 +1,15 @@
+{{- /*
+  Emits the hidden field_labels input formsender uses to head each answer in
+  the ticket body with the label the requester saw, in form order, instead of
+  title-cased field names sorted alphabetically. Pass a slice of dicts, one
+  per field, in the order they appear on the form:
+      {{ partial "formsender-labels.html" (slice
+          (dict "name" "message" "label" "Message")
+          (dict "name" "volume" "label" "Attached storage volume" "section" (slice "VM details"))
+      ) }}
+  "section" is optional and lists the section headings the field sits under,
+  outermost first. Fields without one go under "Information". Fields mapped
+  to RT custom fields never appear in the body, so their labels are unused.
+  See https://github.com/osuosl/formsender/blob/master/docs/source/form_setup.rst
+*/ -}}
+<input type="hidden" name="field_labels" value="{{ . | jsonify }}" />

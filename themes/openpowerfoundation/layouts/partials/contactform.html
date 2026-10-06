@@ -48,6 +48,11 @@ var formname = "form.contactForm";
 					to the <a href="{{ "/policy/privacy" | relURL }}">OpenPOWER Foundation's Privacy Policy</a>.
 				</div>
 			</div>
+			{{ partial "formsender-labels.html" (slice
+				(dict "name" "subject" "label" "Subject")
+				(dict "name" "message" "label" "Message")
+				(dict "name" "url" "label" "Sent from")
+			) }}
 			{{ partial "formsender-fields.html" . }}
 			<div class="form-row">
 				<div class="form-group col-lg-12 text-center">

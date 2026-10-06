@@ -1,4 +1,3 @@
-{{ $hubdata := index $.Site.Data.hub }}
 <script>
 var formname = "form.hubRequestForm";
 </script>
@@ -12,7 +11,7 @@ var formname = "form.hubRequestForm";
 			<input type="hidden" name="send_to" value="{{ .Site.Params.forms.hub.queue }}" />
 			<input type="hidden" name="mail_subject_prefix" value="HUB Access Request" />
 			<input type="hidden" name="mail_subject_key" value="projectname" />
-			<input type="hidden" name="custom_fields" value="CompanyName:companyname,CompanyURL:companyurl,ProjectName:projectname,ProjectURL:projecturl,ProjectType:projecttype,Provider:provider,SSHPubKey:sshpubkey,ResourceType:provides,ResourceAddon:addons,SystemType:system,ResourceSystem:operatingsystem,OpenStackFlavor:opnstkflavor" />
+			<input type="hidden" name="custom_fields" value="CompanyName:companyname,CompanyURL:companyurl,ProjectName:projectname,ProjectURL:projecturl,ProjectType:projecttype,Provider:provider,SSHPubKey:sshpubkey,ResourceType:provides,ResourceAddon:addons,SystemType:system,ResourceSystem:operatingsystem,vCPUs:vcpus,Memory:memory,Disk:disk,GPUs:gpus" />
 			<input type="hidden" name="provider" id="provider" value="{{ .Title }} ({{ .File.BaseFileName }})">
 			<div class="form-row">
 				<div class="form-group col-lg-6">
@@ -59,8 +58,10 @@ var formname = "form.hubRequestForm";
 					<div class="form-group col-lg-6">
 						What POWER system would you like?
 						<select id="system" name="system">
+						{{- $limits := .Param "systemlimits" | default slice }}
 						{{ range .Param "systems" }}
-							<option value="{{ . }}">{{ . }}</option>
+							{{- $limit := index (where $limits "system" .) 0 }}
+							<option value="{{ . }}"{{ with $limit }} data-allow="{{ dict "provides" .provides "addons" .addons | jsonify }}"{{ end }}>{{ . }}</option>
 						{{ end }}
 						</select>
 					</div>
@@ -79,42 +80,93 @@ var formname = "form.hubRequestForm";
 					<div class="form-group col-lg-6">
 						What POWER addons do you require?
 						<select id="addons" name="addons">
+						{{- $limits := .Param "addonlimits" | default slice }}
 						{{ range .Param "addons" }}
-							<option value="{{ . }}">{{ . }}</option>
+							{{- $limit := index (where $limits "addon" .) 0 }}
+							<option value="{{ . }}"{{ with $limit }} data-allow="{{ dict "provides" .provides | jsonify }}"{{ end }}>{{ . }}</option>
 						{{ end }}
 						</select>
+						{{ with .Param "addonnote" }}<small class="form-text text-muted">{{ . }}</small>{{ end }}
+						{{ with .Param "gpunote" }}<small class="form-text text-muted" data-show-if="addons" data-show-match="GPU">{{ . }}</small>{{ end }}
 					</div>
 				{{ end }}
 				{{ if .Param "operatingsystems" }}
 					<div class="form-group col-lg-6">
 						What Operating System would you like on your POWER resource?
+						{{- /* Either a plain list, or a map with the list under
+						  "available" and help text under "note" */}}
+						{{- $os := .Param "operatingsystems" }}
+						{{- $note := "" }}
+						{{- if reflect.IsMap $os }}
+							{{- $note = $os.note }}
+							{{- $os = $os.available }}
+						{{- end }}
 						<select id="operatingsystem" name="operatingsystem">
-						{{ if .Param "operatingsystems.available" }}
-						{{ range .Param "operatingsystems.available" }}
+						{{ range $os }}
 							<option value="{{ . }}">{{ . }}</option>
 						{{ end }}
-						{{ end }}
 						</select>
+						{{ with $note }}<small class="form-text text-muted">{{ . }}</small>{{ end }}
 					</div>
 				{{ end }}
-
-				{{ if .Param "opnstkflavors" }}
-					<div class="form-group col-lg-6">
-						What instance flavor  would you like?
-						<select id="opnstkflavor" name="opnstkflavor">
-						{{ if .Param "opnstkflavors.standard" }}
-                                                {{ range .Param "opnstkflavors.standard" }}
-                                                        <option value="{{ .name }}">{{ .cpus }} CPUs,  {{ .memory }}GB RAM, {{ .disk }}GB Disk</option>
-                                                {{ end }}
-                                                {{ end }}
-                                                {{ if .Param "opnstkflavors.gpuenabled" }}
-                                                {{ range .Param "opnstkflavors.gpuenabled" }}
-                                                        <option value="{{ .name }}">{{ .cpus }} CPUs,  {{ .memory }}GB RAM,  {{ .gpus }} GPUs,  {{ .disk }}GB Disk</option>
-                                                {{ end }}
-                                                {{ end }}
-						</select>
-					</div>
+			</div>
+			{{ with .Param "vmsizes" }}
+			{{- /* Shown only when a virtual machine is the chosen resource. form.js
+			  hides and disables each data-show-if block whose field doesn't match,
+			  so its questions are neither required nor sent. */ -}}
+			<div class="form-row" data-show-if="provides" data-show-match="Virtual Machine">
+				<div class="form-group col-lg-12"><h4>VM details</h4></div>
+				{{- /* Filled in on submit with the sizes below in one line. It isn't an RT
+				  custom field, so the sizing still reaches the ticket body even if a
+				  custom field is missing from the queue. */}}
+				<input type="hidden" name="vmsize" id="vmsize" value="" />
+				<div class="form-group col-lg-6">
+					<label for="vcpus">vCPUs</label>
+					<select id="vcpus" name="vcpus" data-rule="required" data-msg="Please choose the number of vCPUs">
+						<option value="">- Select -</option>
+					{{ range .vcpus }}
+						<option value="{{ . }}">{{ . }}</option>
+					{{ end }}
+					</select>
+					<div class="validation"></div>
+					<small class="form-text text-muted">Each vCPU is one hardware thread on the host. If you need more CPU, memory or disk than we list here, choose the largest option and explain what you need in the message below.</small>
+				</div>
+				<div class="form-group col-lg-6">
+					<label for="memory">Memory</label>
+					<select id="memory" name="memory" data-rule="required" data-msg="Please choose the amount of memory">
+						<option value="">- Select -</option>
+					{{ range .memory }}
+						<option value="{{ . }}">{{ . }}</option>
+					{{ end }}
+					</select>
+					<div class="validation"></div>
+				</div>
+				<div class="form-group col-lg-6">
+					<label for="disk">Root disk</label>
+					<select id="disk" name="disk" data-rule="required" data-msg="Please choose the root disk size">
+						<option value="">- Select -</option>
+					{{ range .disk }}
+						<option value="{{ . }}">{{ . }}</option>
+					{{ end }}
+					</select>
+					<div class="validation"></div>
+					{{ with .disknote }}<small class="form-text text-muted">{{ . }}</small>{{ end }}
+				</div>
+				{{ with .gpus }}
+				<div class="form-group col-lg-6" data-show-if="addons" data-show-match="GPU">
+					<label for="gpus">GPUs</label>
+					<select id="gpus" name="gpus" data-rule="required" data-msg="Please choose the number of GPUs">
+						<option value="">- Select -</option>
+					{{ range . }}
+						<option value="{{ . }}">{{ . }}</option>
+					{{ end }}
+					</select>
+					<div class="validation"></div>
+				</div>
 				{{ end }}
+			</div>
+			{{ end }}
+			<div class="form-row">
 				<div class="form-group col-lg-6">
 					SSH Public Key :
 					<textarea class="form-control" name="sshpubkey" id="sshpubkey" rows="3" placeholder="Paste your public SSH key (e.g. the contents of id_ed25519.pub), or select the .pub file below to fill this in."></textarea>
@@ -126,6 +178,26 @@ var formname = "form.hubRequestForm";
 				<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write a short explanation about getting access. (Why, How, Whatfor, how long)" placeholder="Please write a short explanation about getting access. (Why, How, Whatfor, how long)"></textarea>
 				<div class="validation"></div>
 			</div>
+			{{- $vm := slice "VM details" }}
+			{{ partial "formsender-labels.html" (slice
+				(dict "name" "companyname" "label" "Company/project name")
+				(dict "name" "companyurl" "label" "Company/project URL")
+				(dict "name" "projectname" "label" "Project/product name")
+				(dict "name" "projecturl" "label" "Project/product SCM URL")
+				(dict "name" "provider" "label" "Provider")
+				(dict "name" "projecttype" "label" "What is your project?")
+				(dict "name" "system" "label" "What POWER system would you like?")
+				(dict "name" "provides" "label" "What POWER resources do you require?")
+				(dict "name" "addons" "label" "What POWER addons do you require?")
+				(dict "name" "operatingsystem" "label" "What operating system would you like?")
+				(dict "name" "vmsize" "label" "VM size" "section" $vm)
+				(dict "name" "vcpus" "label" "vCPUs" "section" $vm)
+				(dict "name" "memory" "label" "Memory" "section" $vm)
+				(dict "name" "disk" "label" "Root disk" "section" $vm)
+				(dict "name" "gpus" "label" "GPUs" "section" $vm)
+				(dict "name" "sshpubkey" "label" "SSH public key")
+				(dict "name" "message" "label" "Why do you need access?")
+			) }}
 			{{ partial "formsender-fields.html" . }}
 			<div class="text-center"><button class="btn btn-outline-primary" type="submit" title="Send Message">Request your resource</button></div>
 		</form>
@@ -133,6 +205,21 @@ var formname = "form.hubRequestForm";
 </div></div>
 </section>
 <script>
+// Sum up the VM sizes for the vmsize field, skipping any question that is
+// hidden or unanswered. A native listener added here runs before the
+// validation handler form.js binds on document ready.
+document.getElementById('hubRequestForm').addEventListener('submit', function() {
+	var form = this, parts = [];
+	[['vcpus', 'vCPU', 'vCPUs'], ['memory', 'memory'], ['disk', 'root disk'], ['gpus', 'GPU', 'GPUs']].forEach(function(p) {
+		var field = form.elements[p[0]];
+		if (field && !field.disabled && field.value) {
+			parts.push(field.value + ' ' + (field.value !== '1' && p[2] ? p[2] : p[1]));
+		}
+	});
+	if (form.elements['vmsize']) {
+		form.elements['vmsize'].value = parts.join(', ');
+	}
+});
 function getFileContents(event) {
 	const file = event.target.files[0];
 	if (!file) { return; }

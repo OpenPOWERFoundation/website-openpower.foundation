@@ -101,10 +101,10 @@
 		</div>
 	</div>
 </div>
-{{ if .Site.Data.headlines }}
+{{ if hugo.Data.headlines }}
 {{ $now := now.Format "2006-01-02" }}
 {{ $headlines := slice }}
-{{ range .Site.Data.headlines }}
+{{ range hugo.Data.headlines }}
 	{{ if gt .until $now }}
 		{{ $headlines = $headlines | append . }}
 	{{ end }}

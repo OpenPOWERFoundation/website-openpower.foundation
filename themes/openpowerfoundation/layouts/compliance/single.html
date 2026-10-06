@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 {{ $filename := .File.BaseFileName }}
-{{ $datafile := index $.Site.Data.compliance $filename }}
+{{ $datafile := index hugo.Data.compliance $filename }}
 {{ $specificationfile := printf "%s/%s" "specifications" $filename }}
 <main id="specifications-single">
 <section id="page" class="section-bg">

@@ -125,7 +125,7 @@ enableEmoji = true
 [minify.tdewolff]
 [minify.tdewolff.html]
 	keepComments = false
-	keepConditionalComments = false
+	keepSpecialComments = false
 	keepDefaultAttrVals = true
 	keepDocumentTags = true
 	keepEndTags = true
@@ -133,7 +133,7 @@ enableEmoji = true
 	keepWhitespace = false
 [minify.tdewolff.css]
 	keepWhitespace = false
-	keepCSS2 = true
+	version = 2
 	precision = 0
 [minify.tdewolff.js]
 	keepVarNames = false
