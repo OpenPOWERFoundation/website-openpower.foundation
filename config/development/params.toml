@@ -1,13 +1,11 @@
 #!parms.toml
-# Local development form config. Point `endpoint` at a locally running formsender
-# (see https://github.com/osuosl/formsender). The reCAPTCHA values below are
-# Google's official test pair, which always validates as success:
-#   site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
-#   secret:   6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe  (set as RECAPTCHA_SECRET)
-# `token` must match the formsender instance's TOKEN env var.
+# Local development form config. Point `endpoint` at a locally running formsender:
+# "make formsender" starts one in DRY_RUN mode that logs each ticket instead of
+# sending it to RT (see "Testing the forms" in README.md). `token` must match
+# that formsender's TOKEN env var. `redirect` matches the port "make serve" uses.
 [forms]
-	endpoint = "http://localhost:5000"
+	endpoint = "http://localhost:5056"
 	token = "foo"
 	# Cloudflare Turnstile test site key, which always passes
 	turnstile_sitekey = "1x00000000000000000000AA"
-	redirect = "http://localhost:1313/form-submitted/"
+	redirect = "http://localhost:1314/form-submitted/"

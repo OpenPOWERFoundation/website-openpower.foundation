@@ -1,0 +1,23 @@
+# Local formsender for testing the forms (README: "Testing the forms"). It runs
+# in DRY_RUN mode and is never given an RT_TOKEN, so it writes each ticket to its
+# log instead of sending it, and a formsender without DRY_RUN support fails to
+# start. Start it with "make formsender", which builds from a local formsender
+# checkout when FORMSENDER_SRC points at one.
+services:
+  formsender:
+    image: ${FORMSENDER_IMAGE:-ghcr.io/osuosl/formsender:master}
+    ports:
+      # Matches forms.endpoint in config/development/params.toml. Not 5000, which
+      # other local services (and macOS AirPlay) often hold
+      - "127.0.0.1:5056:5000"
+    environment:
+      DRY_RUN: "1"
+      # Matches forms.token in config/development/params.toml
+      TOKEN: foo
+      # Cloudflare's Turnstile test secret, which accepts any test-key token
+      TURNSTILE_SECRET: 1x0000000000000000000000000000000AA
+      # Threaded workers, so the idle connections a browser opens ahead of time
+      # don't hold a sync worker until gunicorn kills it with WORKER TIMEOUT
+      GUNICORN_CMD_ARGS: --threads 4
+      # Accept the same answers again, so a form can be resubmitted unchanged
+      DUPLICATE_CHECK_TIME: "0"
