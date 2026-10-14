@@ -11,6 +11,8 @@ approvedrfcs:
       download: "https://files.openpowerfoundation.org/s/jE8G7PDksz5ZroN"
     - title: "RFC02657: AES Acceleration Instructions"
       download: "https://files.openpowerfoundation.org/s/EqWNkokQNHZcgcY"
+    - title: "RFC02680: Quantum Cryptography (PQC) Acceleration"
+      download: "https://files.openpowerfoundation.org/s/oKMdtXcyNB9xc49"
 aliases:
   - "powerisa/"
   - "power31/"
