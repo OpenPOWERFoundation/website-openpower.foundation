@@ -5,7 +5,7 @@ outputs:
   - html
   - json
   - rss
-draft: false
+draft: true
 ---
 
 OpenPOWER Ready™ is a mark used by the OpenPOWER Foundation to enable ecosystem product developers

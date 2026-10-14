@@ -17,12 +17,6 @@
 	weight = -900
 [[navbar]]
 	parent = "about"
-	name = "OpenPOWER Ready™"
-	identifier = "aboutready"
-	url= "/about/ready/"
-	weight = -800
-[[navbar]]
-	parent = "about"
 	name = "Board of Directors"
 	identifier = "bod"
 	url = "/boardofdirectors/"
@@ -64,12 +58,6 @@
 	identifier = "specifications"
 	url = "/specifications/"
 	weight = -900
-[[navbar]]
-	parent = "technical"
-	name = "OpenPOWER Ready"
-	identifier = "ready"
-	url = "/ready/"
-	weight = -800
 [[navbar]]
 	parent = "technical"
 	name = "Compliance"

@@ -2,7 +2,7 @@
 title: OpenPOWER Ready Mark
 image: opfreadysquare.png
 date: 2022-01-09
-draft: false
+draft: true
 ---
 
 The OpenPOWER Ready™ is a mark used by the OpenPOWER Foundation to enable ecosystem product developers
