@@ -194,3 +194,33 @@
 		}
 	}
 }
+
+// Progress shown while a form posts (see form.js): a spinner in the disabled
+// submit button and a status note under it.
+.form-spinner {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-right: .4em;
+	vertical-align: -.125em;
+	border: .15em solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: form-spinner .75s linear infinite;
+}
+@keyframes form-spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.form-spinner {
+		animation: none;
+	}
+}
+.form-sending {
+	margin-top: .75rem;
+	&:empty {
+		display: none;
+	}
+}
