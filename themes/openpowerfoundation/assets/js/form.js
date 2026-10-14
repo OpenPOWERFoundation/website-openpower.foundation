@@ -68,18 +68,33 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
+	// Undo the "Sending..." state from a submit, such as after the browser's
+	// Back button. Only the submit button and its note are touched, so fields
+	// that syncConditional disabled stay disabled.
+	function resetSending(form) {
+		var button = $(form).find('button[type="submit"]');
+		button.prop('disabled', false).removeAttr('aria-busy');
+		if (button.data('label') !== undefined) {
+			button.html(button.data('label')).removeData('label');
+		}
+		$(form).find('.form-sending').text('');
+	}
 	$(formname).each(function() {
 		var form = this;
 		syncConditional(form);
 		$(form).on('change', 'input, select, textarea', function() {
 			syncConditional(form);
 		});
+		// An empty live region after the submit button. Screen readers announce
+		// it when the submit handler fills it in.
+		$(form).find('button[type="submit"]').after('<p class="form-sending" role="status"></p>');
 	});
 	// Browsers restore field values when coming back to a cached page, so
-	// resync then too.
+	// resync then too, and clear any "Sending..." state left from a submit.
 	$(window).on('pageshow', function() {
 		$(formname).each(function() {
 			syncConditional(this);
+			resetSending(this);
 		});
 	});
 	$(formname).submit(function() {
@@ -190,6 +205,14 @@ jQuery(document).ready(function($) {
 			$("#errormessage").html("Please complete the challenge before submitting.").addClass("show").show();
 			return false;
 		}
+		// Posting can take a while when RT is slow to answer: show that it is
+		// working, and stop a second click or Enter from filing a duplicate.
+		var button = $(this).find('button[type="submit"]');
+		button.data('label', button.html())
+			.html('<span class="form-spinner" aria-hidden="true"></span> Sending&hellip;')
+			.prop('disabled', true)
+			.attr('aria-busy', 'true');
+		$(this).find('.form-sending').text('Sending your request. This can take up to a minute, so please don\'t submit again.');
 		// Valid: allow the normal POST to formsender. formsender validates the
 		// submission server-side and 302-redirects to forms.redirect on success,
 		// or back to that page with ?error=&message= on failure.
