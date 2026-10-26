@@ -13,4 +13,4 @@
 [forms.passport]
 	queue = "passport"
 [forms.isarfc]
-	queue = "isarfc"
+	queue = "isa"
