@@ -1,0 +1,5 @@
+# Make browsers revalidate pages on every visit (a cheap 304 when unchanged),
+# so a deploy that changes a form reaches people who have it cached.
+<IfModule mod_headers.c>
+	Header set Cache-Control "no-cache" "expr=%{CONTENT_TYPE} =~ m#^text/html#"
+</IfModule>
